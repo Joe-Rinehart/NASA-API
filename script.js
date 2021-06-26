@@ -4,6 +4,8 @@ const key = "UFwCTVgRqaHk2d8LrjJRYoxA5rwPG3VDEz8BT42h";
 const card = document.querySelector('.card');
 const cardBody = document.querySelector('.card-body')
 const moreInfoBtn = document.querySelector('.btn')
+const modalBody = document.querySelector('.modal-body');
+const modalTitle = document.querySelector('.modal-title');
 
 fetch(`${baseURL}?api_key=${key}`)
     .then(response => response.json())
@@ -26,9 +28,17 @@ function displayImage(spaceObject) {
     date.innerText = spaceObject.date
     date.style.fontFamily = 'kiona regular';
 
+    let expl = document.createElement('p');
+    expl.innerText = spaceObject.explanation;
+    expl.style.fontFamily = 'kiona regular'
+
     moreInfoBtn.style.fontFamily = 'kiona regular'
+
+    modalTitle.innerText = spaceObject.title;
+    modalTitle.style.fontFamily = 'space-age'
 
     card.insertBefore(img, cardBody)
     cardBody.insertBefore(title, moreInfoBtn)
     cardBody.insertBefore(date, moreInfoBtn)
+    modalBody.appendChild(expl);
 }

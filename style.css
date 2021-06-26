@@ -40,3 +40,18 @@ body {
 .card-img-top {
     border-radius: 10px 100px / 120px;
 }
+
+.modal-content {
+    border-radius: 60px / 50px 5px;
+}
+
+/* Buttons */
+
+.modal-footer .btn {
+    margin-right: 30px;
+    background-color: #3d434f;
+}
+
+.btn-dark {
+    background-color: #3d434f;
+}
